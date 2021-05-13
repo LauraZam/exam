@@ -1,0 +1,47 @@
+.f{
+    font-family: 'Rubik Mono One';
+}
+#header{
+    background-color: #94AFDC;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+body{
+    margin: 0;
+}
+#menu{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 0;
+}
+.menu_p{
+    padding: 10px;
+}
+.menu_pText{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+.menu_pText:hover{
+    color: lightslategray;
+}
+#footer{
+    background-color: #47679B;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.fMenu{
+    list-style: none;
+}
+.white{
+    color: white;
+}
