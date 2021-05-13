@@ -8,7 +8,7 @@ let login = () => {
     
     if (userName.value === uName && userLastName.value === uLastName && userPassword.value === uPassword) {
         
-        console.log('ok');
+        location.href = 'index.html'
     }else{
         console.log();
     }
