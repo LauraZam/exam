@@ -69,6 +69,18 @@ let podcategories  =[
         }
     ]
 ]
+let rooms = {
+    Standard: [
+        {
+            roomName: '',
+            roomClass: 'Standard',
+            roomsCount: '1',
+            roomsPrice: 'от 30000 kzt',
+            card_img: './imgs/'
+        }
+
+    ]
+}
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
         $('#category1').append(`
@@ -110,17 +122,17 @@ let givPodCategories = () => {
 }
 givPodCategories()
 
-let drawCard = () => {
+let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     $('.cards').append(`
         <div class="card">
             <div class="dCard_img">
-                <igm class="card_img"></igm>
+                <igm class="card_img">${card_img}</igm>
             </div>
             <div class="dCardText">
-                <h2 class="roomName">name</h2>
-                <p class="roomClass">class</p>
-                <p class="roomsCount">count</p>
-                <p class="roomsPrice">price</p>
+                <h2 class="roomName">${roomName}</h2>
+                <p class="roomClass">${roomClass}</p>
+                <p class="roomsCount">${roomsCount}</p>
+                <p class="roomsPrice">${roomsPrice}</p>
                 <input type="date" name="ot" id="">
                 <input type="date" name="do" id="">
                 <button class="startRent btn">забронировать</button>
@@ -129,3 +141,7 @@ let drawCard = () => {
     `)
 }
 drawCard()
+for (let i = 0; i < rooms.length; i++) {
+    drawCard(rooms.)
+    
+}
