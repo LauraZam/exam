@@ -1,0 +1,55 @@
+#body{
+    background-color: #EAF2FF;
+    padding: 30px;
+    font-family: 'Rubik Mono One';
+}
+#filters{
+    font-family: 'Rubik Mono One';
+}
+select{
+    width: auto;
+    border: none;
+    height: 50px;
+    border-radius: 15px;
+    font-family: 'Rubik Mono One';
+}
+.btn{
+    height: 50px;
+    width: auto;
+    background-color: #7FA1DA;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Rubik Mono One';
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    background-color: #C7DDFF;
+    margin: 10px;
+    width: 650px;
+    height: 410px;
+    border-radius: 15px;
+}
+.dCard_img{
+    height: 410px;
+    width: 350px;
+    background-color: #c4c4c4;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.dCardText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+input{
+    border: none;
+    height: 50px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+p{
+    margin: 10px;
+}

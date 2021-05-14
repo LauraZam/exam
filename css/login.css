@@ -37,3 +37,10 @@ input{
     border-radius: 15px;
     font-size: 24px;
 }
+span{
+    margin-top: 10px;
+    
+}
+span>a{
+    color: lightsteelblue;
+}

@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/contacts.css">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="./css/catalog.css">
     <link rel="stylesheet" href="./css/header&footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header id="header" class="f">
         <ul id="menu">
             <li class="menu_p">
-                <a href="index.html" class="menu_pText">главная</a>
+                <a href="" class="menu_pText">главная</a>
             </li>
             <li class="menu_p">
                 <a href="catalog.html" class="menu_pText">каталог</a>
@@ -29,19 +30,24 @@
             </div>
         </ul>
     </header>
+        <div id="body">
+            <div id="filters">
+                <select name="price" id="category1">
 
-    <div id="body">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Add634f343c50fc24183ec7f3450d17e42e07e06da89d9522b410cf693c6da016&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
-
-        <div class="text">
-            <h2 class="h2">контакты</h2>
-            <p>+7(700)9999999</p>
-            <p>+7(700)8686866</p>
-            <h2 class="h2">адрес</h2>
-            <p>г. Нур-султан, 
-                ул. Жекенбатыр 47</p>
+                </select>
+                <select name="rooms" id="category2">
+                    
+                </select>
+                <select name="class" id="category3">
+                    
+                </select>
+                <button id="startFilters" class="btn">найти</button>
+            </div>
+            <div class="cards">
+                
+            </div>
         </div>
-    </div>
+    
 
     <footer id="footer" class="f">
         <ul class="fMenu">
@@ -68,7 +74,8 @@
                 <a href="" class="menu_pText white">+7(700)8686866</a>
             </li>
         </ul>
+        
     </footer>
-    
+    <script src="./js/catalog.js"></script>
 </body>
 </html>
