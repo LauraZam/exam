@@ -33,7 +33,12 @@ select{
 .dCard_img{
     height: 410px;
     width: 350px;
-    background-color: #c4c4c4;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.card_img{
+    height: 410px;
+    width: 350px;
     border-radius: 15px;
     margin-right: 10px;
 }
