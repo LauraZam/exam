@@ -1,4 +1,4 @@
-class rooms{
+class room{
     roomName;
     roomClass;
     roomsCount;
@@ -115,6 +115,9 @@ let podcategories  =[
     ]
 ]
 
+let rooms = [
+    new room('Standard Room', 'Standard', 1, 'от 30000 kzt', '../imgs/standard1.jpg')
+]
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
         $('#category1').append(`
@@ -160,7 +163,7 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     $('.cards').append(`
         <div class="card">
             <div class="dCard_img">
-                <igm class="card_img">${card_img}</igm>
+                <igm class="card_img src="${card_img}"" ></igm>
             </div>
             <div class="dCardText">
                 <h2 class="roomName">${roomName}</h2>
