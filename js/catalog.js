@@ -1,3 +1,48 @@
+class rooms{
+    roomName;
+    roomClass;
+    roomsCount;
+    roomsPrice;
+    card_img;
+    constructor(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg){
+        this.roomName = newRoomName
+        this.roomClass = newRoomClass
+        this.roomsCount = newRoomsCount
+        this.roomsPrice = newRoomsPrice
+        this.card_img = newCardImg
+    }
+    get roomName(){
+        return this.roomName
+    }
+    get roomClass(){
+        return this.roomClass
+    }
+    get roomsCount(){
+        return this.roomsCount
+    }
+    get roomsPrice(){
+        return this.roomsPrice
+    }
+    get card_img(){
+        return this.card_img
+    }
+    set roomName(newRoomName){
+        this.roomName = newRoomName
+    }
+    set roomClass(newRoomClass){
+        this.roomClass = newRoomClass
+    }
+    set roomsCount(newRoomsCount){
+        this.roomsCount = newRoomsCount
+    }
+    set roomsPrice(newRoomsPrice){
+        this.roomsPrice = newRoomsPrice
+    }
+    
+    set card_img(newcardImg){
+        this.card_img = newcardImg
+    }
+}
 let categories = [
     {
         name: 'price',
@@ -69,18 +114,7 @@ let podcategories  =[
         }
     ]
 ]
-let rooms = {
-    Standard: [
-        {
-            roomName: '',
-            roomClass: 'Standard',
-            roomsCount: '1',
-            roomsPrice: 'от 30000 kzt',
-            card_img: './imgs/'
-        }
 
-    ]
-}
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
         $('#category1').append(`
@@ -140,8 +174,8 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
         </div>
     `)
 }
-drawCard()
+// drawCard()
 for (let i = 0; i < rooms.length; i++) {
-    drawCard(rooms.)
+    drawCard(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img)
     
 }
