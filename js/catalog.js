@@ -116,7 +116,8 @@ let podcategories  =[
 ]
 
 let rooms = [
-    new room('Standard Room', 'Standard', 1, 'от 30000 kzt', '../imgs/standard1.jpg')
+    new room('Standard Room', 'Standard', 1, 'от 30000 kzt', '../imgs/standard1.jpg'),
+    new room('Junior room', 'Junior', 2, 'от 60000 kzt', '../imgs/standard1.`jpg')
 ]
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
