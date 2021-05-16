@@ -26,19 +26,19 @@ select{
     flex-direction: row;
     background-color: #C7DDFF;
     margin: 10px;
-    width: 650px;
-    height: 410px;
+    width: 760px;
+    height: 440px;
     border-radius: 15px;
 }
 .dCard_img{
-    height: 410px;
-    width: 350px;
+    height: 440px;
+    width: 440px;
     border-radius: 15px;
     margin-right: 10px;
 }
 .card_img{
-    height: 410px;
-    width: 350px;
+    height: 440px;
+    width: 440px;
     border-radius: 15px;
     margin-right: 10px;
 }

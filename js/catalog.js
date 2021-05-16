@@ -114,10 +114,14 @@ let podcategories  =[
         }
     ]
 ]
+let imgs = [
+    'https://bonhotel.dp.ua/image/Standart%20Classic%20202%20203/9.jpg',
+    'https://lhotels.ru/cache/images/6/8/c/68ccb258176ca4ba105d8aca3c7d1f26.jpg',
 
+]
 let rooms = [
-    new room('Standard Room', 'Standard', 1, 'от 30000 kzt', '../imgs/standard1.jpg'),
-    new room('Junior room', 'Junior', 2, 'от 60000 kzt', '../imgs/standard1.`jpg')
+    new room('Standard Room', 'Standard', 1, 'от 30000 kzt', imgs[0]),
+    new room('Standard room', 'Standard', 2, 'от 60000 kzt', imgs[1])
 ]
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
@@ -164,13 +168,13 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     $('.cards').append(`
         <div class="card">
             <div class="dCard_img">
-                <igm class="card_img src="${card_img}"" ></igm>
+            <img src="${card_img}" alt="" class="card_img">
             </div>
             <div class="dCardText">
-                <h2 class="roomName">${roomName}</h2>
-                <p class="roomClass">${roomClass}</p>
-                <p class="roomsCount">${roomsCount}</p>
-                <p class="roomsPrice">${roomsPrice}</p>
+                <h2 class="roomName">Name: ${roomName}</h2>
+                <p class="roomClass">Class: ${roomClass}</p>
+                <p class="roomsCount">Rooms count: ${roomsCount}</p>
+                <p class="roomsPrice">Price: ${roomsPrice}</p>
                 <input type="date" name="ot" id="">
                 <input type="date" name="do" id="">
                 <button class="startRent btn">забронировать</button>
@@ -178,6 +182,18 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
         </div>
     `)
 }
+$('#startFilters').click(function () {
+    let category1 = $('#category1')
+    let category2 = $('#category2')
+    let category3 = $('#category3')
+    for (let i = 0; i < rooms.length; i++) {
+        if (rooms[i].roomsPrice === podcategories[0].value) {
+            rooms[i].style.border = '1px solid black'
+        }
+        
+    }
+})
+
 // drawCard()
 for (let i = 0; i < rooms.length; i++) {
     drawCard(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img)
