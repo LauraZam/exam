@@ -69,9 +69,7 @@ let podcategories  =[
         }
     ]
 ]
-let rooms = [
-    new roo
-]
+
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
         $('#category1').append(`
@@ -112,7 +110,19 @@ let givPodCategories = () => {
     }
 }
 givPodCategories()
-
+let roomClass = $('.roomClass')
+let startFilters = $('#startFilters')
+startFilters.click(function () {
+    for (let i = 0; i < podcategories.length; i++) {
+        for (let k = 0; k < podcategories[i].length; k++) {
+            if (podcategories[i][k].value === roomClass.val()) {
+                document.getElementsByClassName('card').style.border = '1px soli red'
+            }
+            
+        }
+        
+    }
+})
 let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     $('.cards').append(`
         <div class="card">
@@ -120,10 +130,10 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
                 <img class="card_img" src="${card_img}" alt=""></img>
             </div>
             <div class="dCardText">
-                <h2 class="roomName">${roomName}</h2>
-                <p class="roomClass">${roomClass}</p>
-                <p class="roomsCount">${roomsCount}</p>
-                <p class="roomsPrice">${roomsPrice}</p>
+                <h2 class="roomName">Standard</h2>
+                <p class="roomClass">Standard</p>
+                <p class="roomsCount">2</p>
+                <p class="roomsPrice">от 50000 kzt</p>
                 <input type="date" name="ot" id="">
                 <input type="date" name="do" id="">
                 <button class="startRent btn">забронировать</button>
@@ -132,11 +142,3 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     `)
 }
 drawCard()
-for (let i = 0; i < rooms.length; i++) {
-    for (let k = 0; k < rooms[i].length; k++) {
-        drawCard(rooms[i][k].roomName, rooms[i][k].roomClass,
-        rooms[i][k].roomsPrice, rooms[i][k].card_img)
-    }
-    
-    
-}

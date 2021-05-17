@@ -1,0 +1,21 @@
+#body{
+    font-family: 'Rubik Mono One';
+    background-color: #EAF2FF;
+    padding: 20px;
+}
+.row{
+    display: grid;
+    grid-template-columns: 600px 400px;
+    justify-content: space-around;
+}
+.slider{
+    width: 810px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
