@@ -60,20 +60,20 @@ let categories = [
 let podcategories  =[
     [
         {
-            name: 'от 30000 kzt',
-            value: 'от 30000 kzt'
+            name: '30000 kzt',
+            value: '30000 kzt'
         },
         {
-            name: 'от 50000 kzt',
-            value: 'от 50000 kzt'
+            name: '50000 kzt',
+            value: '50000 kzt'
         },
         {
-            name: 'от 80000 kzt',
-            value: 'от 80000 kzt'
+            name: '80000 kzt',
+            value: '80000 kzt'
         },
         {
-            name: 'от 110000 kzt',
-            value: 'от 110000 kzt'
+            name: '110000 kzt',
+            value: '110000 kzt'
         }
 
     ],
@@ -120,8 +120,8 @@ let imgs = [
 
 ]
 let rooms = [
-    new room('Standard Room', 'Standard', 1, 'от 30000 kzt', imgs[0]),
-    new room('Standard room', 'Standard', 2, 'от 60000 kzt', imgs[1])
+    new room('Standard Room', 'Standard', 1, '30000 kzt', imgs[0]),
+    new room('Standard room', 'Standard', 1, '50000 kzt', imgs[1])
 ]
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
@@ -183,13 +183,14 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     `)
 }
 $('#startFilters').click(function () {
-    let category1 = $('#category1')
-    let category2 = $('#category2')
-    let category3 = $('#category3')
+    
     for (let i = 0; i < rooms.length; i++) {
-        if (rooms[i].roomsPrice === podcategories[0].value) {
-            rooms[i].style.border = '1px solid black'
+        for (let k = 0; k < podcategories.length; k++) {
+            if (rooms[i].roomsPrice === podcategories[0][k].value) {
+                console.log(rooms[i]);
+            }
         }
+        
         
     }
 })
