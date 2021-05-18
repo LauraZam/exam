@@ -46,15 +46,15 @@ class room{
 let categories = [
     {
         name: 'price',
-        value: 'price'
+        value: 'price(все)'
     },
     {
         name: 'rooms',
-        value: 'rooms'
+        value: 'rooms(все)'
     },
     {
         name: 'class',
-        value: 'class'
+        value: 'class(все)'
     }
 ]
 let podcategories  =[
@@ -122,7 +122,9 @@ let imgs = [
 let rooms = [
     new room('Standard Room', 'Standard', 1, '30000 kzt', imgs[0]),
     new room('Standard room', 'Standard', 1, '50000 kzt', imgs[1]),
-    new room('Junior room', 'Junior', '2', '50000 kzt', imgs[2])
+    new room('Junior room', 'Junior', '2', '50000 kzt', imgs[2]),
+    new room('Superior room', 'Superior', '3', '80000 kzt', imgs[3]),
+    new room('')
 ]
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
@@ -184,16 +186,18 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     `)
 }
 $('#startFilters').click(function () {
-    
-    for (let i = 0; i < rooms.length; i++) {
-        for (let k = 0; k < podcategories.length; k++) {
-            if (rooms[i].roomsPrice === podcategories[0][k].value) {
-                console.log(rooms[i]);
+    // for (let i = 0; i < rooms.length; i++) {
+
+            for (let i = 0; i < podcategories[0].length; i++) {
+                // console.log(rooms[i].roomsPrice);
+                
+                console.log(podcategories[0][i].value);
             }
-        }
+            
+            
         
-        
-    }
+    // }
+    
 })
 
 // drawCard()
