@@ -121,7 +121,8 @@ let imgs = [
 ]
 let rooms = [
     new room('Standard Room', 'Standard', 1, '30000 kzt', imgs[0]),
-    new room('Standard room', 'Standard', 1, '50000 kzt', imgs[1])
+    new room('Standard room', 'Standard', 1, '50000 kzt', imgs[1]),
+    new room('Junior room', 'Junior', '2', '50000 kzt', imgs[2])
 ]
 let giveCategories = () => {
     for (let i = 0; i < 1; i++) {
