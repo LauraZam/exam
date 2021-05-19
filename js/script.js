@@ -1,7 +1,7 @@
 
 $('.imgs').ready(function () {
     $('.slider').slick({
-        arrows: true,
+        arrows: false,
         dots: false,
         adaptiveHeight: true,
         slidesToShow: 1,
@@ -12,7 +12,7 @@ $('.imgs').ready(function () {
             {
                 breakpoint: 1150,
                 settings: {
-                    arrows: true,
+                    arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1,
@@ -22,7 +22,7 @@ $('.imgs').ready(function () {
             {
                 breakpoint: 770,
                 settings: {
-                    arrows: true,
+                    arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1
@@ -31,7 +31,7 @@ $('.imgs').ready(function () {
             {
                 breakpoint: 580,
                 settings: {
-                    arrows: true,
+                    arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
                     slidesToShow: 1,
