@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header&footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -31,14 +34,40 @@
     </header>
     <div id="body">
         <div class="row">
-            <div class="slider"><img src="" alt=""></div>
+            <div class="slider imgs">
+                <img src="./imgs/standardroom_1878.jpg" alt="" class="sliderImgs">
+                <img src="./imgs/junior-1.jpg" alt="" class="sliderImgs">
+                <img src="./imgs/superior-room-twin.jpg" alt="" class="sliderImgs">
+                <img src="./imgs/kingroom.jpg" alt="" class="sliderImgs">
+            </div>
             <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus asperiores porro, quas facere vel maiores tempora quam eius suscipit corrupti enim obcaecati totam placeat expedita modi sed similique dolores. Tenetur quidem culpa aspernatur autem saepe velit officiis vitae debitis. Explicabo ad animi dolorum vel nam voluptatem voluptates earum in odit?</p></div>
         </div>
         <h1>нас выбирают, потому что...</h1>
-        <div class="crads">
-            <div class="">
-                <img src="" alt="">
-                <p></p>
+        <div class="wrapper">
+            <div class="card">
+                <div class="cardImgBlock">
+                    <img src="./imgs/cash.png" alt="" class="card_img">
+                </div>
+                
+                <p>лучшие цены</p>
+            </div>
+            <div class="card">
+                <div class="cardImgBlock">
+                    <img src="./imgs/surveillance.png" alt="" class="card_img">
+                </div>
+                <p>круглосуточная охрана</p>
+            </div>
+            <div class="card">
+                <div class="cardImgBlock">
+                    <img src="./imgs/exchange.png" alt="" class="card_img">
+                </div>
+                <p>обменный пункт валют</p>
+            </div>
+            <div class="card">
+                <div class="cardImgBlock">
+                    <img src="./imgs/suitcase.png" alt="" class="card_img">
+                </div>
+                <p>комната для хранения багажа</p>
             </div>
         </div>
     </div>
@@ -68,6 +97,7 @@
             </li>
         </ul>
     </footer>
-    <script src=""></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
