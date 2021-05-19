@@ -9,9 +9,8 @@
     justify-content: space-around;
 }
 .imgs{
-    width: 810px;
+    width: 850px;
     height: 450px;
-    background-color: #fff;
     border-radius: 15px;
     
 }
@@ -79,6 +78,7 @@ h1{
 .slider{
     position: relative;
     padding: 0 60px;
+    border-radius: 15px;
 }
 
 .slider .slick-prev{

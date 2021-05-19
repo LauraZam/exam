@@ -45,8 +45,10 @@ class room{
 }
 let imgs = [
     'https://bonhotel.dp.ua/image/Standart%20Classic%20202%20203/9.jpg',
-    '',
-    ''
+    'https://www.avalaresort.com/images/Guest-room/Avala-Resort/standard-guest-room/2018/Standard_double-002.JPG',
+    'https://www.discoveryshoresboracay.com/files/2019/01/Junior-Suite.jpg',
+    'https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/96/2016/12/27025150/3-Superior-Room.jpg',
+    'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/jumeirah-zabeel-saray/room/6-4-room_jumeirah-zabeel-saray-superior-king_landscape.jpg?h=1920&w=2880'
 ]
 let rooms = [
     new room('Standard Room', 'Standard', 1, '50000 kzt', imgs[0]),
