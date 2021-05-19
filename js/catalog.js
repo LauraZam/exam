@@ -112,8 +112,10 @@ for (let i = 0; i < rooms.length; i++) {
 }
 
 let startRent = $('.startRent')
-for (let i = 0; i < rooms.length; i++) {
-    startRent.click(function () {
-        
-    })
-}
+
+startRent.click(function () {
+    // for (let i = 0; i < rooms.length; i++) {
+        console.log('ok');
+    // }
+    
+})
