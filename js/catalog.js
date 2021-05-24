@@ -1,3 +1,4 @@
+
 class room{
     roomName;
     roomClass;
@@ -81,6 +82,13 @@ let rooms = [
     new room('King room', 'King', '4', '110000 kzt', imgs[4], 110000)
 ]
 
+
+
+function clickBtn() {
+    
+    
+}
+
 let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     $('.cards').append(`
         <div class="card">
@@ -92,9 +100,9 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
                 <p class="roomClass">Class: ${roomClass}</p>
                 <p class="roomsCount">Rooms count: ${roomsCount}</p>
                 <p class="roomsPrice">Price: ${roomsPrice}</p>
-                <input type="number" name="ot" class="ot" placeholder="год месяц день(слитно/без точек)">
-                <input type="number" name="do" class="doc" placeholder="год месяц день(слитно/без точек)">
-                <button class="startRent btn" onclick="addToCart(${roomName}, ${roomClass}, ${roomsCount}, ${roomsPrice}, ${card_img}, ot, doc)">забронировать</button>
+                <input type="number" name="ot" class="ot" placeholder="год месяц день(слитно/без точек)" value="20210524">
+                <input type="number" name="do" class="doc" placeholder="год месяц день(слитно/без точек)" value="20210527">
+                <button class="startRent btn" onclick="addToCart()">забронировать</button>
             </div>
         </div>
     `)
@@ -133,20 +141,39 @@ for (let i = 0; i < rooms.length; i++) {
     drawCard(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img)
     
 }
-
 let startRent = $('.startRent')
 let ot = $('.ot')
 let doc = $('.doc')
 let count = 0
 let roomsB = []
-(function addToCart(roomName, roomClass, roomsCount, roomsPrice, card_img, ot, doc) {
-for (let i = 0; i < rooms.length; i++) {
-    let roomn = new room(roomName[i], roomClass[i], roomsCount[i], roomsPrice[i], card_img[i], price)
-     
+
+
+let uName = localStorage.getItem('uName')
+let uLastName = localStorage.getItem('uLastName')
+
+    for (let i = 0; i < rooms.length; i++) {
+        if (uName === '' || uLastName === '') {
+            alert('Зарегестрируйтесь')
+            location.href = 'registration.html'
+        }if (ot === '' || doc === '') {
+            console.log('error');
+        }
+        else{
+            function addToCart(roomName, roomClass, roomsCount, roomsPrice, card_img) {
+                
+                let room = new roomInfo(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img, rooms[i].price)
+                
+                roomsB.push(room)
+                localStorage.setItem('roomsB', JSON.stringify(roomsB))
+                console.log(roomsB);
+            }
+        }
+    }   
+
+for (let i = 0; i < $('.cards').length; i++) {
+    
+    console.log($('.cards')[i]);
+        
+    
+    
 }
-    
-        
-        
-    
-    
-})
