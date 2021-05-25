@@ -1,4 +1,6 @@
-
+$('.imgs').click(function () {
+    location.href = 'catalog.html'
+})
 $('.imgs').ready(function () {
     $('.slider').slick({
         arrows: false,

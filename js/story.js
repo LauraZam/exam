@@ -26,6 +26,7 @@ for (let i = 0; i < roomsB.length; i++) {
 let oBtn = $('.oplata')
 oBtn.click(function () {
     for (let i = 0; i < roomsB.length; i++) {
+        
         alert('Вы оплатили ' + roomsB[i].price * count)
         
     }

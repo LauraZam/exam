@@ -188,11 +188,9 @@ let uLastName = localStorage.getItem('uLastName')
             
         // }
     }   
-
-for (let i = 0; i < $('.cards').length; i++) {
-    
-    console.log($('.cards')[i]);
-        
-    
-    
+let voyti = document.getElementById('voyti')
+if (uName === '' || uLastName === '') {
+    voyti.innerText = 'войти'
+}else{
+    voyti.innerText = 'Выйти'
 }
