@@ -14,7 +14,7 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img, count) =>
                 <p class="roomsPrice">Price: ${roomsPrice}</p>
                 <p>Days: ${count}</p>
 
-                <button class="startRent btn">оплатить</button>
+                <button class="oplata btn">оплатить</button>
             </div>
         </div>
     `)
@@ -23,3 +23,16 @@ for (let i = 0; i < roomsB.length; i++) {
     drawCard(roomsB[i].roomName, roomsB[i].roomClass, roomsB[i].roomsCount, roomsB[i].roomsPrice, roomsB[i].card_img, count)
     
 }
+let oBtn = $('.oplata')
+oBtn.click(function () {
+    for (let i = 0; i < roomsB.length; i++) {
+        alert('Вы оплатили ' + roomsB[i].price * count)
+        
+    }
+    
+})
+let dBtn = $('.dBtn')
+dBtn.click(function () {
+    localStorage.removeItem('roomsB')
+    location.reload()
+})
