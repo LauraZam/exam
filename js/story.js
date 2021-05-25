@@ -1,6 +1,7 @@
 let roomsB  = JSON.parse(localStorage.getItem('roomsB'))
+let count = JSON.parse(localStorage.getItem('count'))
 console.log(roomsB);
-let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
+let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img, count) => {
     $('.cards').append(`
         <div class="card">
             <div class="dCard_img">
@@ -11,14 +12,14 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
                 <p class="roomClass">Class: ${roomClass}</p>
                 <p class="roomsCount">Rooms count: ${roomsCount}</p>
                 <p class="roomsPrice">Price: ${roomsPrice}</p>
-                <input type="number" name="ot" class="ot" placeholder="год месяц день(слитно/без точек)">
-                <input type="number" name="do" class="doc" placeholder="год месяц день(слитно/без точек)">
-                <button class="startRent btn">продлить</button>
+                <p>Days: ${count}</p>
+
+                <button class="startRent btn">оплатить</button>
             </div>
         </div>
     `)
 }
 for (let i = 0; i < roomsB.length; i++) {
-    drawCard(roomsB[i].roomName, roomsB[i].roomClass, roomsB[i].roomsCount, roomsB[i].roomsPrice, roomsB[i].card_img)
+    drawCard(roomsB[i].roomName, roomsB[i].roomClass, roomsB[i].roomsCount, roomsB[i].roomsPrice, roomsB[i].card_img, count)
     
 }

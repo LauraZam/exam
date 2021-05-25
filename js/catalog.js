@@ -99,8 +99,8 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
                 <p class="roomClass">Class: ${roomClass}</p>
                 <p class="roomsCount">Rooms count: ${roomsCount}</p>
                 <p class="roomsPrice">Price: ${roomsPrice}</p>
-                <input type="number" name="ot" class="ot" placeholder="год месяц день(слитно/без точек)" value="20210524">
-                <input type="number" name="do" class="doc" placeholder="год месяц день(слитно/без точек)" value="20210527">
+                <input type="number" name="ot" class="ot" placeholder="год месяц день(слитно/без точек)" value="">
+                <input type="number" name="do" class="doc" placeholder="год месяц день(слитно/без точек)" value="">
                 <input type="checkbox" class="startRent btn" onclick="check()">забронировать
             </div>
         </div>
@@ -141,8 +141,8 @@ for (let i = 0; i < rooms.length; i++) {
     
 }
 // let startRent = $('.startRent')
-let ot = $('.ot')
-let doc = $('.doc')
+let ot = $('.ot').val()
+let doc = $('.doc').val()
 let count = 0
 let roomsB = []
 let bronBtn = document.getElementsByClassName('startRent')
@@ -154,8 +154,6 @@ let uLastName = localStorage.getItem('uLastName')
         if (uName === '' || uLastName === '') {
             alert('Зарегестрируйтесь')
             location.href = 'registration.html'
-        }if (ot === '' || doc === '') {
-            console.log('error');
         }
         else{
             function check() {
@@ -164,9 +162,11 @@ let uLastName = localStorage.getItem('uLastName')
                     console.log(rooms);
                     if (rooms[i].stat === true) {
                         let room = new roomInfo(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img, rooms[i].price)
-                    
+                        count = Number(doc - ot)
+                        console.log(count);
                         roomsB.push(room)
                         localStorage.setItem('roomsB', JSON.stringify(roomsB))
+                        localStorage.setItem('count', JSON.stringify(count))
                         console.log(roomsB);
                     }
                 }
