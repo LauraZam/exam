@@ -4,9 +4,8 @@
     padding: 20px;
 }
 .row{
-    display: grid;
-    grid-template-columns: 600px 400px;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
 }
 .imgs{
     width: 850px;

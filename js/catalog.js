@@ -6,13 +6,15 @@ class room{
     roomsPrice;
     card_img;
     price;
-    constructor(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg, price){
+    stat
+    constructor(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg, price, stat){
         this.roomName = newRoomName
         this.roomClass = newRoomClass
         this.roomsCount = newRoomsCount
         this.roomsPrice = newRoomsPrice
         this.card_img = newCardImg
         this.price = price
+        this.stat = stat
     }
     get roomName(){
         return this.roomName
@@ -49,8 +51,8 @@ class room{
 class roomInfo extends room{
     ot;
     doc;
-    constructor(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg, price, newOt, newDoc){
-        super(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg, price)
+    constructor(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg, price, stat, newOt, newDoc){
+        super(newRoomName, newRoomClass, newRoomsCount, newRoomsPrice, newCardImg, price, stat)
         this.ot = newOt
         this.doc = newDoc
     }
@@ -75,19 +77,16 @@ let imgs = [
     'https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/jumeirah-zabeel-saray/room/6-4-room_jumeirah-zabeel-saray-superior-king_landscape.jpg?h=1920&w=2880'
 ]
 let rooms = [
-    new room('Standard Room', 'Standard', '1', '50000 kzt', imgs[0], 50000),
-    new room('Standard room', 'Standard', '1', '30000 kzt', imgs[1], 30000),
-    new room('Junior room', 'Junior', '2', '50000 kzt', imgs[2], 50000),
-    new room('Superior room', 'Superior', '3', '80000 kzt', imgs[3], 80000),
-    new room('King room', 'King', '4', '110000 kzt', imgs[4], 110000)
+    new room('Standard Room', 'Standard', '1', '50000 kzt', imgs[0], 50000, false),
+    new room('Standard room', 'Standard', '1', '30000 kzt', imgs[1], 30000, false),
+    new room('Junior room', 'Junior', '2', '50000 kzt', imgs[2], 50000, false),
+    new room('Superior room', 'Superior', '3', '80000 kzt', imgs[3], 80000, false),
+    new room('King room', 'King', '4', '110000 kzt', imgs[4], 110000, false)
 ]
 
 
 
-function clickBtn() {
-    
-    
-}
+
 
 let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
     $('.cards').append(`
@@ -102,7 +101,7 @@ let drawCard = (roomName, roomClass, roomsCount, roomsPrice, card_img) => {
                 <p class="roomsPrice">Price: ${roomsPrice}</p>
                 <input type="number" name="ot" class="ot" placeholder="год месяц день(слитно/без точек)" value="20210524">
                 <input type="number" name="do" class="doc" placeholder="год месяц день(слитно/без точек)" value="20210527">
-                <button class="startRent btn" onclick="addToCart()">забронировать</button>
+                <input type="checkbox" class="startRent btn" onclick="check()">забронировать
             </div>
         </div>
     `)
@@ -141,12 +140,12 @@ for (let i = 0; i < rooms.length; i++) {
     drawCard(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img)
     
 }
-let startRent = $('.startRent')
+// let startRent = $('.startRent')
 let ot = $('.ot')
 let doc = $('.doc')
 let count = 0
 let roomsB = []
-
+let bronBtn = document.getElementsByClassName('startRent')
 
 let uName = localStorage.getItem('uName')
 let uLastName = localStorage.getItem('uLastName')
@@ -159,14 +158,25 @@ let uLastName = localStorage.getItem('uLastName')
             console.log('error');
         }
         else{
-            function addToCart(roomName, roomClass, roomsCount, roomsPrice, card_img) {
+            function check() {
+                if (bronBtn.checked = true) {
+                    rooms[i].stat = true
+                    console.log(rooms);
+                    if (rooms[i].stat === true) {
+                        let room = new roomInfo(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img, rooms[i].price)
+                    
+                        roomsB.push(room)
+                        localStorage.setItem('roomsB', JSON.stringify(roomsB))
+                        console.log(roomsB);
+                    }
+                }
                 
-                let room = new roomInfo(rooms[i].roomName, rooms[i].roomClass, rooms[i].roomsCount, rooms[i].roomsPrice, rooms[i].card_img, rooms[i].price)
                 
-                roomsB.push(room)
-                localStorage.setItem('roomsB', JSON.stringify(roomsB))
-                console.log(roomsB);
             }
+                
+                    
+                
+            
         }
     }   
 
